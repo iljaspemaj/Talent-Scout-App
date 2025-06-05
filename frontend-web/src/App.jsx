@@ -8,8 +8,6 @@ import Register from './pages/Register';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <Router>
       <Routes>
@@ -18,7 +16,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
-        {/* faqe të tjera */}
+        
+        {/* Private Routes */}
       </Routes>
     </Router>
   )
