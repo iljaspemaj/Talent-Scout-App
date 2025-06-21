@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import heroImage from '../assets/Blue_Person.png';
+import heroImage from '../../assets/Blue_Person.png';
 function Hero() {
 return (
     <section className="py-20 pb-5 px-6 font-poppins">

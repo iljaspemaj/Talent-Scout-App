@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from '../components/Hero'
-import Stats from '../components/Stats'
-import Navbar from '../components/Navbar'
+import Hero from '../../components/landing/Hero'
+import Stats from '../../components/landing/Stats'
+import Navbar from '../../components/landing/Navbar'
 
 const LandingPage = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-
+import { Link } from 'react-router-dom';
 const ContactUs = () => {
 return (
     <div className="min-h-screen bg-[#F8FAFC] font-poppins py-16 px-10">
@@ -27,9 +27,16 @@ return (
                 <p>Tirana Tech Park, Albania</p>
             </div>
             </div>
+            <div className="fixed bottom-6 left-6">
+        <Link to="/">
+            <Button variant="outline" className="bg-white hover:bg-gray-100 border border-gray-300">
+            Landing Page
+            </Button>
+        </Link>
+        </div>
         </div>
 
-          <div className="md:w-1/2 p-6">
+        <div className="md:w-1/2 p-6">
             <form className="space-y-4">
             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>

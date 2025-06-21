@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { login } from '../../../../store/authSlice'
 import { Button } from '@/components/ui/button';
 
 const RegisterForm = () => {
+    const dispatch = useDispatch();
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -32,11 +35,19 @@ const RegisterForm = () => {
             });
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('username', username);
+            
+            dispatch(login({
+            user: { username, email },
+            token: res.data.token
+            }));
+
             navigate('/dashboard');
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed');
         }
     };
+
+    
 
     return (
         <div className="bg-white p-10 rounded-xl shadow-md w-full max-w-md h-[530px]">
@@ -99,12 +110,12 @@ const RegisterForm = () => {
                     <p className="text-red-500 text-sm mb-3">{error}</p>
                 )}
 
-                <button
+                <Button
                     type="submit"
                     className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
                 >
                     Sign up
-                </button>
+                </Button>
             </form>
         </div>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import Logo from '../assets/BlueIconDesign.png';
-import image from '../assets/Talent Network.png'
+import Logo from '../../assets/BlueIconDesign.png';
+import image from '../../assets/Talent Network.png'
 const AboutUs = () => {
 return (
     <div className="min-h-screen bg-[#F8FAFC] font-poppins">
@@ -96,16 +96,15 @@ return (
     </div>
 
         {/* Call-to-Action Section */}
-        <div className="py-16 bg-[#0D1B2A] text-white text-center">
+        <div className="py-16 bg-[#0D1B2A] text-center">
         <div className="container mx-auto">
-    <h2 className="text-3xl font-bold mb-6">Ready to Find Your Perfect Match?</h2>
+    <h2 className="text-3xl font-bold mb-6 text-white">Ready to Find Your Perfect Match?</h2>
     <div className="flex justify-center space-x-4">
-        <Button className="bg-white text-[#0D1B2A] hover:bg-gray-100 px-8 py-3">
-        Explore Talent
-        </Button>
-        <Button variant="outline" className="text-white border-white hover:bg-white/10 px-8 py-3">
-        Join Our Network
-        </Button>
+        <Link to="/">
+            <Button variant="outline" className="bg-white hover:bg-gray-100 border border-gray-300">
+            Landing Page
+            </Button>
+        </Link>
     </div>
     </div>
     </div>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/BlueIconDesign.png';
+import Logo from '../../assets/BlueIconDesign.png';
 import { Button } from '@/components/ui/button';
-import LoginForm from '../components/shared/auth/LoginForm';
+import RegisterForm from '../../components/shared/auth/RegisterForm';
 
-const Login = () => {
+
+const Register = () => {
     return (
         <div className="min-h-screen flex font-poppins">
             {/* Pjesa e majtë (Aside) */}
@@ -16,7 +17,7 @@ const Login = () => {
 
                 <div className="space-y-4">
                     <p className="text-sm leading-relaxed">
-                        “Talent Scout më ndihmoi të gjej zhvillues të talentuar në pak minuta. Tani e përdor për çdo projekt të ri që filloj.”<br />
+                        "Talent Scout më ndihmoi të gjej zhvillues të talentuar në pak minuta. Tani e përdor për çdo projekt të ri që filloj."<br />
                         <span className="text-gray-400">- Arbër Kola, Project Manager @TechNova</span>
                     </p>
 
@@ -28,12 +29,12 @@ const Login = () => {
                 </div>
             </div>
 
-            {/* Pjesa e djathtë (LoginForm) */}
+            {/* Pjesa e djathtë (RegisterForm) */}
             <div className="w-1/2 bg-[#F8FAFC] flex items-center justify-center">
-                <LoginForm /> {/* Përdor komponentin LoginForm */}
+                <RegisterForm />
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;

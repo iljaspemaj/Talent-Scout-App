@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from '@/components/ui/button';
+import { useDispatch } from 'react-redux';
+import { login } from '../../../../store/authSlice'
 
 const LoginForm = () => {
+    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -14,11 +17,18 @@ const LoginForm = () => {
         try {
             const res = await axios.post('http://localhost:8095/auth/login', { email, password });
             localStorage.setItem('token', res.data.token);
+
+            dispatch(login({
+            user: res.data.user,  
+            token: res.data.token
+        }));
+
             navigate('/dashboard');
         } catch (err) {
             setError('Invalid credentials');
         }
     };
+
 
     return (
         <div className="bg-white p-10 rounded-xl shadow-md w-full max-w-md">
